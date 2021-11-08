@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html {{site.language_attributes}}>
+
+  <head>
+    <meta charset="{{site.charset}}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    {% block fonts %}
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    {% endblock %}
+    
+    {{ function('wp_head') }}
+
+    {% block styles %}
+    {% endblock %}
+    
+    <style>
+      .uk-sticky-below .logo-svg, .uk-sticky-below .logo-svg:hover, .uk-sticky-below .logo-svg:focus {
+        color: #008ce1!important;
+      }
+      header.uk-inline {
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  {% block bodywrap %}
+    <body class="{{body_class|e('esc_html')}}" data-template="base.twig">
+      
+      {% do action('rmcc_before_header') %}
+
+      {% block header %}
+        <header class="uk-section uk-section-small uk-background-muted">
+          <div class="uk-container uk-container-expand">
+            Sorry, nothing to display here...
+          </div>
+        </header>
+      {% endblock %}
+      
+      {% do action('rmcc_after_header') %}
+      
+      <main role="main" id="MainContent">
+        {% block contentwrap %}
+          <section class="content-wrap uk-section uk-section-small">
+            <div class="content-container uk-container">
+              {% block content %}
+                Sorry, nothing to display here...
+              {% endblock %}
+            </div>
+          </section>
+        {% endblock %}
+      </main>
+      
+      {% do action('rmcc_before_footer') %}
+      
+      {% block footer %}
+        <footer class="the-footer">
+          {% include 'footer-main.twig' %}
+          {% include 'footer-bottom.twig' %}
+        </footer>
+      {% endblock %}
+      
+      {% do action('rmcc_after_footer') %}
+      
+      {{ function('wp_footer') }}
+      
+      {% block scripts %}
+      {% endblock %}
+      
+    </body>
+  {% endblock %}
+
+</html>
