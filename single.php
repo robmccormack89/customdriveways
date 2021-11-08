@@ -2,7 +2,7 @@
 /**
  * The default template for displaying all single posts
  *
- * @package Dream_Winners
+ * @package Customdriveways
  */
 
 // get the main context

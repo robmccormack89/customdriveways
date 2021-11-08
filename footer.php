@@ -2,7 +2,7 @@
 /**
  * The template for displaying the footer
  *
- * @package Dream_Winners
+ * @package Customdriveways
  */
 
  $timberContext = $GLOBALS['timberContext']; // @codingStandardsIgnoreFile

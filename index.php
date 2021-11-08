@@ -2,7 +2,7 @@
 /**
  * The main index template file, functions at the main archive
  *
- * @package Dream_Winners
+ * @package Customdriveways
  */
 
 // get the main context

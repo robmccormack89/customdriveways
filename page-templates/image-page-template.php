@@ -2,7 +2,7 @@
 /**
  * Template Name: Image Header Template
  *
- * @package Dream_Winners
+ * @package Customdriveways
  */
 
 $context = Timber::context();

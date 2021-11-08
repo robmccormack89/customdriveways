@@ -2,7 +2,7 @@
 /**
  * The template for displaying general archive pages
  *
- * @package Dream_Winners
+ * @package Customdriveways
  */
 
 // sets the template hierarchy
