@@ -1,99 +1,156 @@
 {% extends "base.twig" %}
 
-{% block header %}
-  <header class="uk-inline">
-    <div class="header-top-nav uk-position-top uk-position-z-index">
-      <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200">
-        {% include 'header-nav.twig' %}
-      </div>
-    </div>
-    <img class="cover-img home-cover-img" 
-    data-src="{{post.thumbnail.src|resize(1920)|default(options.site_featured_image.url|resize(1920))|default(theme.link ~ '/assets/images/clouds1.jpg')|e('esc_url')}}" 
-    alt="{{post.thumbnail.alt|default(options.site_featured_image.alt)|e('esc_html')}}" 
-    data-width data-height uk-img>
-    <div class="uk-overlay-primary uk-position-cover">
-      <div class="uk-position-center">
-        <div class="uk-text-center uk-container uk-container-xsmall uk-padding">
-          <h1 class="uk-margin-large-top">{{ _x('Lorem ipsum dolor sit amet consectetur', 'Homepage hero title', 'custom-driveways')|e('esc_html') }}</h1>
-          <hr class="uk-divider-small">
-          <p class="uk-text-emphasis uk-text-lead uk-margin-medium-bottom">{{ _x('Lorem ipsum dolor sit amet', 'Homepage hero sub-title', 'custom-driveways')|e('esc_html') }}</p>
-          <a href="#Next" class="uk-button uk-button-default uk-button-large scroll">{{ _x('Learn more', 'Homepage hero button text', 'custom-driveways')|e('esc_html') }}</a>
-        </div>
-      </div>
-    </div>
-  </header>
-{% endblock %}
-
 {% block contentwrap %}
-
-  <!-- under hero section -->
-  <section id="Next" class="uk-section uk-section-primary">
-    <div class="uk-text-center uk-container uk-container-xsmall">
-      <h2 class="uk-h3">{{ _x('Lorem ipsum dolor sit amet', 'Homepage under-hero title', 'custom-driveways')|e('esc_html') }}</h2>
-      <p>{{ _x('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. Consectetur adipisicing elit, sed do eiusmod tempor.', 'Homepage under-hero message', 'custom-driveways')|e('esc_html') }}</p>
-      <a class="feature-link uk-text-uppercase scroll" href="{{ _x('#Latest', 'Homepage under-hero link url', 'custom-driveways') }}">
-        {{ _x('View all competitions', 'Homepage under-hero link text', 'custom-driveways')|e('esc_html') }}
-      </a>
+  <section class="hero-section">
+    <div class="uk-background-fixed uk-background-cover uk-width-1-1 uk-section" style="background-image: url({{theme.link}}/assets/images/landscape.jpg);">
+      <div class="half-box one uk-inline uk-overlay uk-overlay-secondary uk-width-1-1 uk-light uk-padding-remove">
+        <div class="uk-container" uk-scrollspy="cls: uk-animation-scale-up;">
+          <h1 class="uk-heading-medium uk-margin-remove-bottom">Custom Driveways</h1>
+          <p class="uk-margin-remove-top uk-text-meta uk-margin-remove-top">Pattern Imprinted Concrete Specialists</p>
+          <p><a href="#Next" class="uk-button uk-button-secondary cd-button" uk-scroll>Learn more</a></p>
+        </diV>
+      </div>
     </div>
   </section>
-  
-  <!-- latest competitions -->
-  {% if latest_competitions|length > 0 %}
-    <section id="Latest" class="latest-competitions uk-section uk-container">
-      <h2 class="uk-text-center">{{ _x('Latest Competitions', 'Homepage latest competitions title', 'custom-driveways')|e('esc_html') }}</h2>
-      <hr class="uk-divider-small uk-text-center">
-      <div id="slideshow_latest" class="swiper-container">
-        <div class="swiper-wrapper">
-          {% for post in latest_competitions %}
-            <div class="swiper-slide">
-              {% include 'tease-product.twig' %}
+  <section id="Next" class="about-section uk-section uk-section-small">
+    <div class="uk-container">
+      <ul class="uk-flex uk-flex-middle" uk-grid>
+        <li class="uk-width-1-1 uk-width-1-4@m" uk-scrollspy="cls: uk-animation-slide-left-medium;">
+          <h2 class="uk-h3">About us</h2>
+          <p><strong>Custom Driveways</strong> are an expert <strong>Pattern Imprinted Concrete</strong> contractor service. We specialise in <strong>Pattern Imprinted Concrete</strong> driveways that are unique, custom-designed and long-lasting.</p>
+          <a href="#More" class="uk-button cd-button" uk-scroll>Learn more</a>
+        </li>
+        <li class="uk-width-1-1 uk-width-3-4@m">
+          <div class="uk-flex uk-flex-middle uk-grid-small uk-grid-divider" uk-grid uk-lightbox="animation: slide">
+            <div class="uk-width-1-3 uk-width-1-3@m">
+              <div class="uk-text-center" uk-scrollspy="cls: uk-animation-scale-down;">
+                <a class="uk-inline-clip uk-transition-toggle" href="{{theme.link}}/assets/images/about1.jpg" data-caption="Caption 1" tabindex="0">
+                  <img class="uk-transition-scale-up uk-transition-opaque" src="{{theme.link}}/assets/images/about1.jpg" alt="">
+                </a>
+              </div>
             </div>
-          {% endfor %}
-        </div>
-        {% if latest_competitions|length > 3 %}
-          <div class="swiper-pagination"></div>
-        {% endif %}
+            <div class="uk-width-1-3 uk-width-1-3@m">
+              <div class="uk-text-center" uk-scrollspy="cls: uk-animation-scale-down;">
+                <a class="uk-inline-clip uk-transition-toggle" href="{{theme.link}}/assets/images/about2.jpg" data-caption="Caption 2" tabindex="0">
+                  <img class="uk-transition-scale-up uk-transition-opaque" src="{{theme.link}}/assets/images/about2.jpg" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="uk-width-1-3 uk-width-1-3@m">
+              <div class="uk-text-center" uk-scrollspy="cls: uk-animation-scale-down;">
+                <a class="uk-inline-clip uk-transition-toggle" href="{{theme.link}}/assets/images/about3.jpg" data-caption="Caption 3" tabindex="0">
+                  <img class="uk-transition-scale-up uk-transition-opaque" src="{{theme.link}}/assets/images/about3.jpg" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section id="More" class="halfed-section">
+    <div class="uk-background-fixed uk-background-cover uk-width-1-1" style="background-image: url({{theme.link}}/assets/images/landscape.jpg);" hidden>
+      <ul class="uk-child-width-1-2@m uk-grid-match uk-grid-collapse" uk-grid>
+        <li>
+          <div class="half-box one uk-inline uk-overlay uk-overlay-primary uk-padding-large uk-light">
+            <div class="uk-position-relative uk-position-center uk-text-center">
+              <h2 class="uk-h1 uk-margin-remove" uk-scrollspy="cls: uk-animation-slide-left-medium;">Why should I install a pattern imprinted concrete driveway?</h2>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="half-box one uk-inline uk-overlay uk-overlay-primary darker uk-light uk-padding-large">
+            <div class="uk-position-relative uk-position-center">
+              <ul class="uk-list uk-list-circle uk-list-large" uk-scrollspy="cls: uk-animation-slide-right-medium;">
+                <li>Low maintenance driveways – weed free and extremely durable</li>
+                <li>Completely customisable driveways in a number of attractive designs, patterns and colours</li>
+                <li>Beautifully finished pattern imprinted concrete surfacing that’s also suitable for patios, steps, footpaths and other embellishments</li>
+                <li>Easy to clean and maintain, with a long-lasting and durable finish</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="uk-background-muted theme-border-top theme-border-bottom">
+      <div class="uk-container uk-section" uk-scrollspy="cls: uk-animation-scale-up;">
+        <h2 class="uk-h2 uk-margin-remove" uk-scrollspy="cls: uk-animation-slide-left-medium;">Why should I install a pattern imprinted concrete driveway?</h2>
+        <ul class="uk-list uk-list-circle uk-list-large" uk-scrollspy="cls: uk-animation-slide-right-medium;">
+          <li>Low maintenance driveways – weed free and extremely durable</li>
+          <li>Completely customisable driveways in a number of attractive designs, patterns and colours</li>
+          <li>Beautifully finished pattern imprinted concrete surfacing that’s also suitable for patios, steps, footpaths and other embellishments</li>
+          <li>Easy to clean and maintain, with a long-lasting and durable finish</li>
+        </ul>
+      </diV>
+    </div>
+  </section>
+  <section class="checked-section uk-section">
+    <div class="uk-container">
+      <h2 class="uk-h2" uk-scrollspy="cls: uk-animation-scale-up;">What are the applications?</h2>
+      <ul class="uk-child-width-1-2@s uk-margin-medium-top" uk-grid>
+        <li uk-scrollspy="cls: uk-animation-slide-left-medium;">
+          <div class="">
+            <div class="uk-grid-divider cd-divider uk-grid-small" uk-grid>
+              <div class="uk-width-auto">
+                <i class="fas fa-check fa-lg"></i>
+              </div>
+              <div class="uk-width-expand">
+                <h3 class="uk-card-title">Multipurpose</h3>
+                <p>Pattern Imprinted Concrete has other uses as well as driveways. Patios and walls can also reap the benefits of Imprinted Concrete over more traditional materials such as slabs and bricks. This means that we can transform your entire garden area.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li uk-scrollspy="cls: uk-animation-slide-right-medium;">
+          <div class="">
+            <div class="uk-grid-divider cd-divider uk-grid-small" uk-grid>
+              <div class="uk-width-auto">
+                <i class="fas fa-check fa-lg"></i>
+              </div>
+              <div class="uk-width-expand">
+                <h3 class="uk-card-title">Driveways</h3>
+                <p class="uk-margin-remove-bottom">Pattern Imprinted Concrete is fast becoming a popular alternative to traditional tarmacadam & block paving driveways because it is much easier to maintain. It is also eye-catching as well as aesthetically pleasing.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li uk-scrollspy="cls: uk-animation-slide-left-medium;">
+          <div class="">
+            <div class="uk-grid-divider cd-divider uk-grid-small" uk-grid>
+              <div class="uk-width-auto">
+                <i class="fas fa-check fa-lg"></i>
+              </div>
+              <div class="uk-width-expand">
+                <h3 class="uk-card-title">Patios</h3>
+                <p class="uk-margin-remove-bottom">Pattern Imprinted Concrete is also an ideal alternative to paving slabs for patios. This is because there are no joins, making it safer than slabs by reducing the risks of tripping and falling. A Custom Driveways Patio looks great & will last for many years.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li uk-scrollspy="cls: uk-animation-slide-right-medium;">
+          <div class="">
+            <div class="uk-grid-divider cd-divider uk-grid-small" uk-grid>
+                <div class="uk-width-auto">
+                  <i class="fas fa-check fa-lg"></i>
+                </div>
+                <div class="uk-width-expand">
+                  <h3 class="uk-card-title">Walls</h3>
+                  <p class="uk-margin-remove-bottom">Wallcrete is an innovative alternative to standard brick and block walls. Wallcrete is easier to keep clean and maintain, as well as being completely customisable. You choose the Pattern and Colour that suits your property best.</p>
+                </div>
+              </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="cover-section">
+    <div class="uk-background-fixed uk-background-cover uk-width-1-1 uk-section" style="background-image: url({{theme.link}}/assets/images/landscape.jpg);">
+      <div class="half-box one uk-inline uk-overlay uk-overlay-secondary uk-width-1-1 uk-light uk-text-center">
+        <div class="uk-container" uk-scrollspy="cls: uk-animation-scale-up;">
+          <h2 class="uk-margin-remove-bottom uk-h2">Get in touch with us today to see how custom driveways can transform your driveway or garden area</h2>
+          <p><a href="/contact-us" class="uk-button uk-button-secondary cd-button">Get in Touch</a></p>
+        </diV>
       </div>
-      {% if latest_competitions|length > 3 %}
-        <div class="view-all-button uk-text-center uk-margin-medium-top">
-          <a href="{{shop_endpoint|e('esc_url')}}" class="uk-button uk-button-default uk-button-large">{{ _x('View all', 'Homepage all competitions button text', 'custom-driveways')|e('esc_html') }}</a>
-        </div>
-      {% endif %}
-    </section>
-  {% endif %}
-  
-  <!-- home page editor content -->
-  {{ post.content }}
-  
-{% endblock %}
-
-{% block scripts %}
-  <script type='text/javascript'>
-    // latest comps swipers
-    jQuery(function(){
-      var latest_swiper = new Swiper('#slideshow_latest', {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        // autoplay: {
-        //   delay: 4000,
-        //   disableOnInteraction: true,
-        // },
-        // init: false,
-        pagination: {
-          el: '.swiper-pagination',
-          dynamicBullets: true,
-        },
-        breakpoints: {
-          960: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          1290: {
-            slidesPerView: 3,
-            spaceBetween: 40,
-          },
-        }
-      });
-    });
-  </script>
+    </div>
+  </section>
 {% endblock %}

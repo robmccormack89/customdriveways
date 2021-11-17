@@ -1,0 +1,50 @@
+<footer class="uk-background-primary uk-light">
+  <div class="uk-container">
+    <div class="uk-section-small uk-visible@m">
+      <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+        <div class="uk-navbar-center">
+          <ul class="uk-navbar-nav">
+            {% for item in menu_main.get_items %}
+              {% if item.get_children %}
+                <li class="{{ item.classes | join(' ')|e('html_attr') }}">
+                  <a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}<i class="fas fa-angle-down menu-dropicon"></i></a>
+                  <div class="uk-navbar-dropdown uk-background-primary">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                      {% for child in item.get_children %}
+                        <li>
+                          <a href="{{ child.get_link|e('esc_url') }}">{{ child.title|e('esc_html') }}</a></a>
+                            {% if child.children %}
+                              <ul class="uk-nav-sub">
+                                {% for third in child.children %}
+                                  <li>
+                                    <a href="{{ third.get_link|e('esc_url') }}">{{ third.title|e('esc_html') }}</a>
+                                  </li>
+                                {% endfor %}
+                              </ul>
+                            {% endif %}
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </li>
+              {% else %}
+                <li class="{{ item.classes | join(' ')|e('html_attr') }}">
+                  <a href="{{ item.get_link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a></li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <hr class="uk-visible@m">
+    <div class="uk-section-small">
+      <div class="uk-text-center uk-text-small">
+        <a href="/"><img class="uk-width-small" src="{{theme.link}}/assets/images/logos/logo_300.png"></a>
+        <p class=" uk-text-bold">Portnashangan, Multyfarnham, Mullingar, Co. Westmeath<br>
+        044 93 82051 | 083 144 8855<br>
+        customdriveways100@gmail.com</p>
+        <a class="" href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>

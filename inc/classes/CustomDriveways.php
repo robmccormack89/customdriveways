@@ -5,14 +5,10 @@ use Timber\Timber;
 // Define paths to Twig templates
 Timber::$dirname = array(
   'views',
-
+  'views/archive',
   'views/parts',
-  
-  'views/parts/header',
-  'views/parts/footer',
-
-  'views/type/page',
-  'views/type/post',
+  'views/single',
+  'views/single/pages',
 );
 
 // set the $autoescape value
@@ -128,16 +124,16 @@ class CustomDriveways extends Timber {
     );
     
     // enqueue wp jquery
-    wp_enqueue_script('jquery');
+    // wp_enqueue_script('jquery');
     
     // global (site wide) scripts; uses jquery
-    wp_enqueue_script(
-      'global',
-      get_template_directory_uri() . '/assets/js/global.js',
-      'jquery',
-      '1.0.0',
-      true
-    );
+    // wp_enqueue_script(
+    //   'global',
+    //   get_template_directory_uri() . '/assets/js/global.js',
+    //   'jquery',
+    //   '1.0.0',
+    //   true
+    // );
     
     // theme base css
     wp_enqueue_style(
@@ -150,18 +146,18 @@ class CustomDriveways extends Timber {
       'custom-driveways-styles', get_stylesheet_uri()
     );
     
-    wp_enqueue_style(
-      'swiper-js',
-      get_template_directory_uri() . '/assets/css/lib/swiper-bundle.min.css'
-    );
+    // wp_enqueue_style(
+    //   'swiper-js',
+    //   get_template_directory_uri() . '/assets/css/lib/swiper-bundle.min.css'
+    // );
     
-    wp_enqueue_script(
-      'swiper-js',
-      get_template_directory_uri() . '/assets/js/lib/swiper-bundle.min.js',
-      '',
-      '1.0.0',
-      true
-    );
+    // wp_enqueue_script(
+    //   'swiper-js',
+    //   get_template_directory_uri() . '/assets/js/lib/swiper-bundle.min.js',
+    //   '',
+    //   '1.0.0',
+    //   true
+    // );
   }
 
 }

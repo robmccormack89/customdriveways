@@ -1,0 +1,14 @@
+{% extends "base.twig" %}
+
+{% block contentwrap %}
+  <section class="content-section content-wrap uk-section uk-position-relative uk-position-z-index">
+    <div class="content-container uk-container uk-container-xsmall">
+      <article id="Page-{{post.id|e('esc_html')}}" class="{{post.class|e('esc_html')}}">
+        <h1 class="article-title uk-margin-remove-bottom">{{post.title}}</h1>
+        <div class="article-content">
+          {{post.content}}
+        </div>
+      </article>
+    </div>
+  </section>
+{% endblock %}

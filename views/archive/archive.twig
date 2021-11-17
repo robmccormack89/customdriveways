@@ -1,0 +1,22 @@
+{% extends "base.twig" %}
+
+{% block contentwrap %}
+  <section class="uk-section uk-section-large">
+    <div class="blog-list uk-container">
+      <div class="archive-posts uk-child-width-1-1 uk-grid-large" uk-grid>
+        {% if posts is not empty %}
+          {% for post in posts %}
+            {% include '_tease.twig' %}
+          {% endfor %}
+        {% else %}
+          No posts found...
+        {% endif %}
+      </div>
+    </div>
+    {% if (pagination.next or pagination.prev) %}
+      <div class="uk-margin-xlarge-top">
+        {% include '_pagination.twig' %}
+      </div>
+    {% endif %}
+  </section>
+{% endblock %}

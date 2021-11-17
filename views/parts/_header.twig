@@ -1,0 +1,96 @@
+<header>
+  <div class="uk-background-primary uk-light">
+    <div class="uk-container">
+      <div class="uk-padding-small uk-padding-remove-horizontal uk-width-small">
+        <a href="/"><img src="{{theme.link}}/assets/images/logos/logo_300.png"></a>
+      </div>
+    </div>
+    <div class="uk-background-primary darker theme-border-top" uk-sticky>
+      <div class="uk-container">
+        <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+          <div class="uk-navbar-left">
+            <div class="uk-navbar-item uk-hidden@m">
+              <a href="#MobileOffCanvas" class="cd-button" uk-toggle><i class="fas fa-bars fa-lg uk-margin-small-right"></i>Menu</a>
+            </div>
+            <ul class="uk-navbar-nav uk-visible@m">
+              {% for item in menu_main.get_items %}
+                {% if item.get_children %}
+                  <li class="{{ item.classes | join(' ')|e('html_attr') }}">
+                    <a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}<i class="fas fa-angle-down menu-dropicon"></i></a>
+                    <div class="uk-navbar-dropdown uk-background-primary">
+                      <ul class="uk-nav uk-navbar-dropdown-nav">
+                        {% for child in item.get_children %}
+                          <li>
+                            <a href="{{ child.get_link|e('esc_url') }}">{{ child.title|e('esc_html') }}</a></a>
+                              {% if child.children %}
+                                <ul class="uk-nav-sub">
+                                  {% for third in child.children %}
+                                    <li>
+                                      <a href="{{ third.get_link|e('esc_url') }}">{{ third.title|e('esc_html') }}</a>
+                                    </li>
+                                  {% endfor %}
+                                </ul>
+                              {% endif %}
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </li>
+                {% else %}
+                  <li class="{{ item.classes | join(' ')|e('html_attr') }}">
+                    <a href="{{ item.get_link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a></li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="uk-navbar-right uk-hidden@m">
+            <div class="uk-navbar-item">
+              <a href="/contact-us" class="uk-button uk-button uk-button-primary cd-button uk-button-small">Contact Us</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<nav id="MobileOffCanvas" class="mobile-slide-navbar" uk-offcanvas="overlay: true;" data-template="header-mobile-offcanvas.twig">
+  <div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide">
+    <button class="uk-offcanvas-close" type="button" uk-close></button>
+    <ul class="uk-nav-default uk-nav-parent-icon uk-position-relative" uk-nav>
+      <li class="uk-nav-header theme-border-bottom uk-h4 uk-margin-remove">{{ _x('Menu', 'Mobile menu', 'custom-driveways')|e('esc_html') }}</li>
+      <li class="uk-nav-divider"></li>
+      {% if has_menu_mobile %}
+        {% for item in menu_mobile.get_items %}
+          {% if item.get_children %}
+            <li class="{{ item.classes | join(' ')|e('esc_html') }} uk-parent">
+              <a href="{{ item.link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a>
+              <ul class="uk-nav-sub">
+                {% for child in item.get_children %}
+                  <li class="{{ child.classes | join(' ')|e('esc_html') }}">
+                    <a href="{{ child.get_link|e('esc_url') }}">- {{ child.title|e('esc_html') }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+          {% else %}
+            <li class="{{ item.classes | join(' ')|e('esc_html') }}">
+              <a href="{{ item.get_link|e('esc_url') }}">{{ item.title|e('esc_html') }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      <li class="uk-nav-divider"></li>
+    </ul>
+    <div>
+      <h5 class="uk-margin-top">Contact us</h5>
+      <div class="uk-text-small">
+        <div class="address">
+          <p class="uk-margin-small">Portnashangan, Multyfarnham, Mullingar, Co. Westmeath</p>
+        </div>
+        <p class="uk-margin-small"><strong></strong> <a class="uk-link-text" href="#">044 93 82051</a></p>
+        <p class="uk-margin-small"><strong></strong> <a class="uk-link-text" href="#">083 144 8855</a></p>
+        <p class="uk-margin-small"><strong></strong> <a class="uk-link-text" href="#">customdriveways100@gmail.com</a></p>
+      </div>
+    </div>
+  </div>
+</nav>

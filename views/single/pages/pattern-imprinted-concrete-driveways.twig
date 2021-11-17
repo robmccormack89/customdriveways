@@ -1,0 +1,43 @@
+{% extends "page.twig" %}
+
+{% block styles %}
+  <style>
+    .content-section {
+      font-size: 18px;
+    }
+  </style>
+{% endblock %}
+
+{% block contentwrap %}
+  <section class="hero-section">
+    <div class="uk-background-fixed uk-background-cover uk-width-1-1 uk-section" style="background-image: url({{theme.link}}/assets/images/landscape.jpg);">
+      <div class="half-box one uk-inline uk-overlay uk-overlay-secondary uk-width-1-1 uk-light uk-padding-remove">
+        <div class="uk-container uk-text-center" uk-scrollspy="cls: uk-animation-scale-up;">
+          {% block contentwrap_title %}
+            <h1 class="uk-text-capitalize thin-heading" uk-scrollspy="cls: uk-animation-scale-up;">{{post.title}}</h1>
+          {% endblock %}
+        </diV>
+      </div>
+    </div>
+  </section>
+  <article id="Page-{{post.id|e('esc_html')}}" class="content-section uk-container uk-container-xsmall uk-section uk-section-small {{post.class|e('esc_html')}}">
+    {% block contentgrid_content %}
+      <p><strong>Pattern Imprinted Concrete Driveways </strong>are&nbsp;an affordable, durable and low-maintenance alternative to other driveway surfaces.</p>
+      <p>Lots of&nbsp;customers have contacted us looking for a solution to weathered, weedy and worn looking driveways. This is because the materials used on their current driveways aren’t long-lasting and require a lot of upkeep.</p>
+      <p>Additionally, <strong>Custom Driveways</strong> are the one of the best concrete contractors in Ireland. Our Imprinted Concrete gives their driveways a new lease of&nbsp;life, and in is much easier to maintain than materials such as tarmacadam, gravel, shingle and paving-blocks.</p>
+      <p><strong>Pattern Imprinted Concrete Driveways</strong> are weed-resistant and built to withstand Ireland’s weather. Overall, it doesn’t need to be re-done every couple of years, unlike other driveway materials. In fact, if it’s taken care of, a pattern imprinted concrete driveway can last&nbsp;a lifetime with minimal repair work.</p>
+      <p><strong>Pattern Imprinted Concrete</strong> is also&nbsp;available in many different colours and designs. Custom Driveways currently offer a range of 24 different hues to choose from, as well as a large range of unique&nbsp;patterns. The design of your printed concrete driveways is only limited by your imagination. We’ll work with you to choose the colours and patterns that best suit property and also fit your vision for the installation too.</p>
+    {% endblock %}
+    {% block contentgrid_images %}
+      <ul class="uk-child-width-1-2@m uk-grid-small uk-margin-medium-top" uk-grid>
+        <li>
+          <img class="" data-src="/wp-content/uploads/2016/10/driveway2-pattern-imprinted-concrete.jpg" alt="pattern imprinted concrete driveways" uk-img>
+        </li>
+        <li>
+          <img class="" data-src="/wp-content/uploads/2016/10/driveway1-pattern-imprinted-concrete.jpg" alt="pattern imprinted concrete driveways" uk-img>
+        </li>
+      </ul>
+    {% endblock %}
+  </article>
+  {% include '_work-cta.twig' %}
+{% endblock %}

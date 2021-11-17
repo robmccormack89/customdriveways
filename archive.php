@@ -27,14 +27,6 @@ if ( is_day() ) {
 } elseif ( is_post_type_archive() ) {
 	$context['title'] = post_type_archive_title( '', false );
 	array_unshift( $templates, 'archive-' . get_post_type() . '.twig' );
-} elseif ( is_tax('status') ) {
-	$context['title'] = single_term_title( 'Status: ', false );;
-  array_unshift( $templates, 'archive-live_draws.twig' );
-}
-
-if (is_post_type_archive( 'entry_lists' )) {
-  $file = get_field('pdf_upload');
-  $context['pdf_upload_url'] = $file['url'];
 }
 
 // get the pagination

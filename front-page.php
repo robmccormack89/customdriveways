@@ -5,17 +5,6 @@
 * @package Customdriveways
 */
 
-/**
- * ADD WOOCOMMERCE BODY CLASS TO FRONT PAGE
- * makes ajax add to cart buttons on homepage work with loader effect
- *
-**/
-add_filter('body_class', function($classes){
-	$stack = $classes;
-	array_push($stack, 'woocommerce');
-	return $stack;
-});
-
 // get the context
 $context = Timber::context();
 
@@ -32,20 +21,6 @@ if (is_home() && is_front_page()) {
 } else {
 	$context['title'] =  get_the_title($post->id);
 };
-
-// latest competitions args
-$args = array(
- 'post_type'             => 'product',
- 'post_status'           => 'publish',
- 'posts_per_page'        => '5',
- 'meta_query' => array(
-	 array(
-		 'key' => '_lottery_dates_to',
-		 'compare' => 'EXISTS'
-	 )
- )
-);
-$context['latest_competitions'] = new Timber\PostQuery($args);
 
 // render the context with template
 Timber::render(array('front-page.twig'), $context);

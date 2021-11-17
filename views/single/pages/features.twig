@@ -1,0 +1,21 @@
+{% extends "pattern-imprinted-concrete-driveways.twig" %}
+
+{% block contentgrid %}
+  <div class="content-grid uk-flex" uk-grid>
+    <div class="uk-width-1-4@m">
+      {% block contentgrid_content %}
+        <p>At <strong>Custom Driveways</strong> we can offer our customers a wide range of interesting special features which you may&nbsp;like to add to your <strong>Pattern Imprinted Concrete</strong> installation.</p>
+        <p>These features are special prints which are added into the otherwise regular pattern you choose as the main&nbsp;design of your <strong>Custom Driveways</strong> installation.</p>
+      {% endblock %}
+    </div>
+    <div class="uk-width-3-4@m">
+      {% block contentgrid_images %}
+        <ul class="uk-child-width-1-1" uk-grid>
+          <li>
+            <img data-src="/wp-content/uploads/2016/09/pattern-imprinted-concrete-custom-driveways.jpg" alt="coloured concrete" uk-img>
+          </li>
+        </ul>
+      {% endblock %}
+    </div>
+  </div>
+{% endblock %}
