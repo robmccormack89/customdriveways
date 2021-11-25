@@ -9,6 +9,7 @@ Timber::$dirname = array(
   'views/parts',
   'views/single',
   'views/single/pages',
+  'views/single/pages/galleries',
 );
 
 // set the $autoescape value
@@ -124,7 +125,7 @@ class CustomDriveways extends Timber {
     );
     
     // enqueue wp jquery
-    // wp_enqueue_script('jquery');
+    wp_enqueue_script('jquery');
     
     // global (site wide) scripts; uses jquery
     // wp_enqueue_script(

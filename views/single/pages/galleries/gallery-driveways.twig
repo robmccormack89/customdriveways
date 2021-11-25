@@ -1,0 +1,591 @@
+{% extends "gallery.twig" %}
+
+{% block styles %}
+  <script src="{{theme.link}}/assets/js/lib/jquery.easyPaginate.js"></script>
+  <style>
+    #theGallery.uk-grid-stack>* {
+      padding-left: 0!important;
+    }
+    #theGallery.uk-grid-column-small, 
+    #theGallery.uk-grid-small {
+      margin-left: 0;
+    }
+    .easyPaginateNav {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 0;
+      padding: 0;
+      list-style: none;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .easyPaginateNav a {
+      flex: none;
+      position: relative;
+      padding: 5px 10px;
+      color: #999;
+      transition: color .1s ease-in-out;
+      text-decoration: none;
+    }
+    .easyPaginateNav>.current {
+      color: #666;
+      text-decoration: underline;
+    }
+    .easyPaginateNav>.disabled {
+      display: none;
+    }
+  </style>
+{% endblock %}
+
+{% block gallerygrid %}
+  <ul id="theGallery" class="uk-child-width-1-4@m uk-grid-small" uk-grid uk-lightbox="animation: slide">
+    
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-18.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-18-400x284.jpg" alt="driveways 40" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-P-06.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-P-06-400x284.jpg" alt="driveways 08" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-P-06.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-24-400x284.jpg" alt="driveways 34" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-P-13-e1475958232597.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-P-13-e1475958232597-400x284.jpg" alt="driveways 14" uk-img>
+      </a>
+    </li>
+    
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-25.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-25-400x284.jpg" alt="driveways 33" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-P-11-e1475958206683.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-P-11-e1475958206683-400x284.jpg" alt="driveways 12" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-P-03.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-P-03-400x284.jpg" alt="driveways 03" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-01.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-01-400x284.jpg" alt="driveways 57"  uk-img>
+      </a>
+    </li>
+    
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-14.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-14-400x284.jpg" alt="driveways 44" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-08.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-08-400x284.jpg" alt="driveways 50" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-29.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-29-400x284.jpg" alt="driveways 29" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-27.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-27-400x284.jpg" alt="driveways 31"  uk-img>
+      </a>
+    </li>
+    
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-26.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-26-400x284.jpg" alt="driveways 32" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-05.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-05-400x284.jpg" alt="driveways 53" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-36.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-36-400x284.jpg" alt="driveways 22" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-P-09-e1475958168359.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-P-09-e1475958168359-400x284.jpg" alt="driveways 10"  uk-img>
+      </a>
+    </li>
+    
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-21.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-21-400x284.jpg" alt="driveways 37" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-11.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-11-400x284.jpg" alt="driveways 47" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-P-10-e1475958187859.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-P-10-e1475958187859-400x284.jpg" alt="driveways 11" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-39.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-39-400x284.jpg" alt="driveways 19"  uk-img>
+      </a>
+    </li>
+    
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-05.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-05-400x284.jpg" alt="driveways 53" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-34.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-34-400x284.jpg" alt="driveways 24" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-27.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-27-400x284.jpg" alt="driveways 31" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-26.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-26-400x284.jpg" alt="driveways 32" uk-img>
+      </a>
+    </li>
+    
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-38.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-38-400x284.jpg" alt="driveways 20" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-37.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-37-400x284.jpg" alt="driveways 21" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-04.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-04-400x284.jpg" alt="driveways 54" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-03.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-03-400x284.jpg" alt="driveways 55" uk-img>
+      </a>
+    </li>
+    
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-21.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-21-400x284.jpg" alt="driveways 37" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-22.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-22-400x284.jpg" alt="driveways 36" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-18.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-18-400x284.jpg" alt="driveways 40" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="/wp-content/uploads/2016/10/Driveway-L-23.jpg">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="/wp-content/uploads/2016/10/Driveway-L-23-400x284.jpg" alt="driveways 35" uk-img>
+      </a>
+    </li>
+    
+    {% set new_drive_img_1 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-1.jpg' %}
+    {% set new_drive_img_2 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-2.jpg' %}
+    {% set new_drive_img_3 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-3.jpg' %}
+    {% set new_drive_img_4 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-4.jpg' %}
+    {% set new_drive_img_5 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-5.jpg' %}
+    {% set new_drive_img_6 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-6.jpg' %}
+    {% set new_drive_img_7 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-7.jpg' %}
+    {% set new_drive_img_8 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-8.jpg' %}
+    {% set new_drive_img_9 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-9.jpg' %}
+    {% set new_drive_img_10 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-10.jpg' %}
+    
+    {% set new_drive_img_11 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-11.jpg' %}
+    {% set new_drive_img_12 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-12.jpg' %}
+    {% set new_drive_img_13 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-13.jpg' %}
+    {% set new_drive_img_14 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-14.jpg' %}
+    {% set new_drive_img_15 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-15.jpg' %}
+    {% set new_drive_img_16 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-16.jpg' %}
+    {% set new_drive_img_17 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-17.jpg' %}
+    {% set new_drive_img_18 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-18.jpg' %}
+    {% set new_drive_img_19 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-19.jpg' %}
+    {% set new_drive_img_20 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-20.jpg' %}
+    
+    {% set new_drive_img_21 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-21.jpg' %}
+    {% set new_drive_img_22 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-22.jpg' %}
+    {% set new_drive_img_23 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-23.jpg' %}
+    {% set new_drive_img_24 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-24.jpg' %}
+    {% set new_drive_img_25 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-25.jpg' %}
+    {% set new_drive_img_26 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-26.jpg' %}
+    {% set new_drive_img_27 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-27.jpg' %}
+    {% set new_drive_img_28 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-28.jpg' %}
+    {% set new_drive_img_29 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-29.jpg' %}
+    {% set new_drive_img_30 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-30.jpg' %}
+    
+    {% set new_drive_img_31 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-31.jpg' %}
+    {% set new_drive_img_32 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-32.jpg' %}
+    {% set new_drive_img_33 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-33.jpg' %}
+    {% set new_drive_img_34 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-34.jpg' %}
+    {% set new_drive_img_35 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-35.jpg' %}
+    {% set new_drive_img_36 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-36.jpg' %}
+    {% set new_drive_img_37 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-37.jpg' %}
+    {% set new_drive_img_38 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-38.jpg' %}
+    {% set new_drive_img_39 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-39.jpg' %}
+    {% set new_drive_img_40 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-40.jpg' %}
+    
+    {% set new_drive_img_41 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-41.jpg' %}
+    {% set new_drive_img_42 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-42.jpg' %}
+    {% set new_drive_img_43 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-43.jpg' %}
+    {% set new_drive_img_44 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-44.jpg' %}
+    {% set new_drive_img_45 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-45.jpg' %}
+    {% set new_drive_img_46 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-46.jpg' %}
+    {% set new_drive_img_47 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-47.jpg' %}
+    {% set new_drive_img_48 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-48.jpg' %}
+    {% set new_drive_img_49 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-49.jpg' %}
+    {% set new_drive_img_50 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-50.jpg' %}
+    
+    {% set new_drive_img_51 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-51.jpg' %}
+    {% set new_drive_img_52 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-52.jpg' %}
+    {% set new_drive_img_53 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-53.jpg' %}
+    {% set new_drive_img_54 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-54.jpg' %}
+    {% set new_drive_img_55 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-55.jpg' %}
+    {% set new_drive_img_56 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-56.jpg' %}
+    {% set new_drive_img_57 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-57.jpg' %}
+    {% set new_drive_img_58 = '/wp-content/uploads/galleries-extra/driveway/new-driveways-58.jpg' %}
+    
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_1}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_1|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_2}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_2|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_3}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_3|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_4}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_4|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_5}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_5|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_6}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_6|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_7}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_7|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_8}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_8|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_9}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_9|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_10}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_10|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_11}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_11|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_12}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_12|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_13}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_13|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_14}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_14|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_15}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_15|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_16}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_16|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_17}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_17|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_18}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_18|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_19}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_19|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_20}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_20|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_21}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_21|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_22}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_22|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_23}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_23|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_24}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_24|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_25}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_25|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_26}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_26|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_27}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_27|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_28}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_28|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_29}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_29|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_30}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_30|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_31}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_31|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_32}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_32|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_33}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_33|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_34}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_34|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_35}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_35|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_36}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_36|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_37}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_37|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_38}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_38|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_39}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_39|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_40}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_40|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_41}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_41|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_42}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_42|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_43}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_43|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_44}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_44|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_45}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_45|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_46}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_46|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_47}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_47|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_48}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_48|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_49}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_49|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_50}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_50|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_51}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_51|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_52}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_52|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_53}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_53|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_54}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_54|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_55}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_55|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_56}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_56|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_57}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_57|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    <li>
+      <a class="uk-inline uk-transition-toggle" href="{{new_drive_img_58}}">
+        <img class="uk-transition-scale-up uk-transition-opaque uk-box-shadow-hover-large theme-border" data-src="{{new_drive_img_58|resize(400, 284)}}" alt="" uk-img>
+      </a>
+    </li>
+    
+  </ul>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    jQuery(document).ready(function( $ ) {
+      $('#theGallery').easyPaginate({
+        paginateElement: 'li',
+        elementsPerPage: 12,
+        effect: 'default',
+        lastButton: false,
+        firstButton: false,
+        prevButtonText: '<i class="fas fa-angle-left"></i>',
+        nextButtonText: '<i class="fas fa-angle-right"></i>',
+      });
+      document.querySelector('#theGallery').addEventListener('DOMSubtreeModified', function(event) {
+        UIkit.scroll().scrollTo($('#Top'));
+      });
+    });
+  </script>
+{% endblock %}
