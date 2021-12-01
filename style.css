@@ -86,7 +86,8 @@ b, strong {
 .uk-background-primary {
   background-color: #303440;
 }
-.uk-background-muted {
+.uk-background-muted,
+.uk-section-muted {
   background-color: #e7e7e7;
 }
 .uk-overlay-primary {
